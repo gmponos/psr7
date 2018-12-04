@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace GuzzleHttp\Tests\Psr7;
 
 use GuzzleHttp\Psr7\Uri;
@@ -26,7 +29,7 @@ class UriNormalizerTest extends BaseTest
     /**
      * @dataProvider getUnreservedCharacters
      */
-    public function testDecodeUnreservedCharacters($char)
+    public function testDecodeUnreservedCharacters(string $char)
     {
         $percentEncoded = '%'.bin2hex($char);
         // Add encoded reserved characters to test that those are not decoded and include the percent-encoded
